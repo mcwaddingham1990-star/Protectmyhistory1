@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ProtectMyHistory</string>
+    <string name="accessibility_description">Records memory breadcrumbs visible on this device, including browser address bars, email addresses, phone numbers, and contact activity. Password fields are excluded.</string>
+</resources>
